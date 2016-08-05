@@ -1,0 +1,47 @@
+*** Starting uWSGI 2.0.13.1 (64bit) on [Fri Aug  5 04:00:45 2016] ***
+compiled with version: 4.8.4 on 04 August 2016 22:27:49
+os: Linux-2.6.32-042stab116.1 #1 SMP Wed May 4 16:21:02 MSK 2016
+nodename: localhost
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /app/Unlimited-Adventure3/EndlessHandsome
+detected binary path: /root/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /app/Unlimited-Adventure3/EndlessHandsome
+your processes number limit is 256625
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8077 fd 3
+Python version: 3.4.3 (default, Oct 14 2015, 20:31:36)  [GCC 4.8.4]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xe57bc0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 402597 bytes (393 KB) for 2 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "/app/Unlimited-Adventure3/EndlessHandsome/django_wsgi.py", line 20, in <module>
+    exec(compile(open(activate_env).read(), activate_env, 'exec'), dict(__file__=activate_env))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/venv/bin/activate_this.py'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 537)
+spawned uWSGI worker 1 (pid: 538, cores: 1)
+spawned uWSGI worker 2 (pid: 539, cores: 1)
+uwsgi_proto_uwsgi_parser(): Resource temporarily unavailable [proto/uwsgi.c line 40]
+ImportError: No module named '/app/Unlimited-Adventure3/EndlessHandsome'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 538|app: -1|req: -1/1] 116.216.5.11 () {48 vars in 891 bytes} [Fri Aug  5 04:35:38 2016] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+ImportError: No module named '/app/Unlimited-Adventure3/EndlessHandsome'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 538|app: -1|req: -1/2] 116.216.5.11 () {46 vars in 836 bytes} [Fri Aug  5 04:37:19 2016] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Fri Aug  5 04:38:31 2016 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  5 04:38:31 2016 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
