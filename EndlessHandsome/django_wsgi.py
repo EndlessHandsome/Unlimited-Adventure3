@@ -3,11 +3,24 @@
 
 import os
 import sys
+import site
 
-# 将系统的编码设置为UTF8
-sys.setdefaultencoding('utf8')
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+sys.path.append(BASE_DIR)
+
+VENV_DIR = os.path.join(os.path.dirname(BASE_DIR), 'venv')
+
+site.addsitedir(os.path.join(VENV_DIR, 'lib/python3.4/site-packages'))
+
+# Activate your virtual env
+activate_env = os.path.join(VENV_DIR, 'bin/activate_this.py')
+
+exec(compile(open(activate_env).read(), activate_env, 'exec'), dict(__file__=activate_env))
+
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "EndlessHandsome.settings")
 
-from django.core.handlers.wsgi import WSGIHandler
-application = WSGIHandler()
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
